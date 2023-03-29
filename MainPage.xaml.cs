@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,15 +8,16 @@ using Xamarin.Forms;
 using Firebase.Database;
 using Firebase.Database.Query;
 using System.Linq.Expressions;
-using ExplodeJuice.ingredientRepository;
+using ExplodeJuice;
+
 namespace task1
 {
-    public partial class IngredientsList : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public IngredientsList()
+        public MainPage()
         {
             InitializeComponent();
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
             List<Item> itemList = new List<Item>
             {
                       new Item { Name = "Item 1", Description = "Description for item 1", ImagePath = "https://t4.ftcdn.net/jpg/04/44/69/07/360_F_444690746_s4c1CO3KL2mffD4ny8HHD4iVsCGiZ4dR.jpg" },
@@ -25,27 +26,26 @@ namespace task1
             };
 
             itemListView.ItemsSource = itemList;
-////////////////////////////////////
+            ////////////////////////////////////
 
         }
 
 
 
-            private async void DeleteButton_Clicked(object sender, EventArgs e)
-            {
+        private async void DeleteButton_Clicked(object sender, EventArgs e)
+        {
             try
             {
-                ingredientRepository delete = new ingredientRepository();
-                delete.Delete_ingredAsync();
+               
             }
             catch
             {
 
             }
-        
-            }
 
-        
+        }
+
+
 
         private void itemListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
