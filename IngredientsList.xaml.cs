@@ -29,10 +29,6 @@ namespace task1
 
         }
 
-        private void EditeButton_Clicked(object sender, System.EventArgs e)
-        {
-
-        }
 
 
             private async void DeleteButton_Clicked(object sender, EventArgs e)
