@@ -23,7 +23,8 @@
                 </Grid>
 
                 <Image x:Name="reddrink" Source="reddrink.png" HeightRequest="200" WidthRequest="100" Margin="20" />
-
+          
+                <Frame BackgroundColor="#EFB897" CornerRadius="25"  Padding=".5">
                 <StackLayout  BackgroundColor="#EFB897"  >
                 <Label Text="Wild berry Mix  "
                        FontSize="25"
@@ -85,6 +86,7 @@
 
 
                 </StackLayout>
+                  </Frame>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>
