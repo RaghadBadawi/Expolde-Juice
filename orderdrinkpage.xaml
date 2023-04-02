@@ -22,7 +22,7 @@
             
             <Frame BackgroundColor="#EFB897" CornerRadius="25"  Padding=".5">
             <StackLayout  BackgroundColor="#EFB897"   >
-                <Label Text="Wild berry Mix  "
+                <Label Text=" Wild berry Mix  "
                        FontSize="25"
                        TextColor="#311403"
                        Padding="10"/>
