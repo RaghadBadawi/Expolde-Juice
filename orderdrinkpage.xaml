@@ -4,7 +4,7 @@
              x:Class="App3.orderdrinkpage">
      <ContentPage.Content>
         
-        <StackLayout BackgroundColor="#FFF6F0" Margin="16,64,16,35" >
+        <StackLayout BackgroundColor="#FFF6F0" Padding="10" >
             <Grid Padding="2">
                 <ImageButton Source="LoveCircled.png"
                              HorizontalOptions="End"
