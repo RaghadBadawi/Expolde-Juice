@@ -1,49 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="add_ingredients.Views.selectIngredients"
-             xmlns:local="clr-namespace:add_ingredients.View_models">
+             x:Class="add_ingredients.Views.selectIngredients" >
     
-    <ContentPage.BindingContext>
-        <local:IngredientsViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout  Padding="10" BackgroundColor="#FFF6F0">
-            <Grid Margin="0,0,0,20">
+        <StackLayout  Style="{StaticResource MainStackLayout}">
+         
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
                 <ImageButton  x:Name="backButton"
-                   Source="keyboard_arrow_left.png"
-                   HeightRequest="30"
-                   WidthRequest="30"
-                   Aspect="AspectFit"
-                   HorizontalOptions="StartAndExpand"
-                   BackgroundColor="Transparent"
-                   Clicked="backButtonClicked"/>
+                              Style="{StaticResource allImageButtons}"
+                              Source="keyboard_arrow_left.png"
+                              HorizontalOptions="Start"
+                              Clicked="backButtonClicked"/>
 
-                <Label Text="Add Ingredients" FontSize="Large" HorizontalTextAlignment="Center" TextColor="#311403" ></Label>
-            </Grid>
+                <Label Text="Add Ingredients" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
             <ListView x:Name="ingredientList" 
-                      ItemsSource="{Binding Ingredients}" 
-                      Margin="0,20,0,0"
-                      HasUnevenRows="True" RowHeight="100" 
-                      SeparatorColor="Transparent" 
-                      SeparatorVisibility="None">
+                      ItemsSource="{Binding Ingredients}"
+                      Style="{StaticResource ingredientListView}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,10">
-                                <StackLayout Orientation="Horizontal" HeightRequest="100"  >
-                                    <StackLayout.Background>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                            <GradientStop Color="#EFB897" Offset="0.0" />
-                                            <GradientStop Color="White" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </StackLayout.Background>
-                                    <Image  Source="{Binding image}" Aspect="AspectFit"/>
+                                <StackLayout Style="{StaticResource ListItme}">
+
+                                    <Image  Source="{Binding ImagePath}" Aspect="AspectFit"/>
                                     <StackLayout>
-                                        <Label Text="{Binding IngredientName}"
+                                        <Label Text="{Binding Name}"
                                        FontSize="Large"
                                            TextColor="#311403"/>
-                                        <Label Text="{Binding IngredientType}" 
+                                        <Label Text="{Binding Description}" 
                                        FontSize="Medium"
                                            TextColor="#311403"/>
 
@@ -51,17 +37,12 @@
                                     </StackLayout>
 
                                     <ImageButton  x:Name="addImageButton"
-                                              Source="plus.png"
-                                              HeightRequest="30"
-                                              WidthRequest="30"
-                                              Aspect="AspectFit"
-                                              HorizontalOptions="EndAndExpand"
-                                              BackgroundColor="Transparent"
-                                              Margin="0,0,10,0"
-                                              Clicked="AddImageButtonClicked"/>
+                                                  Source="plus.png" 
+                                                  Style="{StaticResource allImageButtons}"
+                                                  HorizontalOptions="EndAndExpand"
+                                                  Margin="0,0,10,0"
+                                                  Clicked="AddImageButtonClicked"/>
 
-
-                                   
 
                                 </StackLayout>
                             </Frame>
@@ -70,24 +51,19 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Frame x:Name="popupFrame"
-                   BackgroundColor="#EFB897"
+                   Style="{StaticResource popUpFrame}"
                    Padding="20"
-                   CornerRadius="10"
                    IsVisible="false"
                    HorizontalOptions="CenterAndExpand"
-                   WidthRequest="300"
-                   >
+                   WidthRequest="300">
                 <StackLayout>
-                    <Label Text="Done selecting?" TextColor="#311403" FontSize="Medium" />
+                    <Label Text="Done selecting?" Style="{StaticResource itemTitle}" />
                     <Button  x:Name="doneImageButton"
+                             Style="{StaticResource actionButton}"
                              Text="Done"
-                             TextColor="#EFB897"
-                             CornerRadius="20"
                              WidthRequest="180"
-                             HeightRequest="40"
                              VerticalOptions="End"
                              HorizontalOptions="Center"
-                             BackgroundColor="#311403"
                              Margin="0,0,10,10"
                              Clicked="doneImageButtonClicked"/>
                 </StackLayout>
