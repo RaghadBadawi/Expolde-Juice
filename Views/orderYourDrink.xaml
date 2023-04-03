@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.orderYourDrink">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFF6F0" Margin="16,64,16,35" >
+            <Grid Padding="0,5,0,0">
+                <ImageButton Source="LoveCircled.png" 
+                         BackgroundColor="#FFF6F0"
+                         Grid.Column="1" 
+                         TranslationX="60"
+                         Clicked="ImageButton_Clicked"
+                         
+                         >
+                </ImageButton>
+                <ImageButton Source="keyboardarrowleft.png"
+                         BackgroundColor="#FFF6F0"
+                         Grid.Column="0" 
+                         TranslationX="-70"
+                         Clicked="ImageButton_Clicked_1">
+                </ImageButton>
+
+            </Grid>
+
+            <Image x:Name="reddrink" Source="reddrink.png" HeightRequest="200" WidthRequest="100" Margin="20" />
+
+            <StackLayout  BackgroundColor="#EFB897"  >
+                <Label Text="Wild berry Mix  "
+                       FontSize="25"
+                       TextColor="#311403"
+                       Padding="5"/>
+                <Label Text="Ingredients"
+                       FontSize="20"
+                       TextColor="#311403"
+                       Padding="5"
+                   />
+                <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center">
+                    <ImageButton Source="Blueberry.png" 
+                             BackgroundColor="#FFF6F0" 
+                             CornerRadius="7" 
+                             HeightRequest="70" 
+                             WidthRequest="70"
+                             Clicked="ImageButton_Clicked_4"    
+                                 >
+                    </ImageButton>
+                    <ImageButton Source="Strawberry.png" 
+                             BackgroundColor="#FFF6F0" 
+                             CornerRadius="7" 
+                             HeightRequest="70" 
+                             WidthRequest="70"
+                             Clicked="ImageButton_Clicked_2"
+                                     >
+                    </ImageButton>
+                    <ImageButton Source="Raspberry.png" 
+                             BackgroundColor="#FFF6F0" 
+                             CornerRadius="7"
+                             HeightRequest="70" 
+                             WidthRequest="70"
+                             Clicked="ImageButton_Clicked_3"        
+                                     >
+                    </ImageButton>
+                </StackLayout>
+                <Label Text="Comment"
+                           FontSize="20"
+                           TextColor="#311403"
+                           Padding="5"
+                           />
+                <Frame CornerRadius="10" Padding="0,0,3,0" Margin="10">
+                    <Entry Text="Add Comment"
+                               TextColor="#311403" 
+                               BackgroundColor="#FFFFFF" >
+                    </Entry>
+                </Frame>
+                <Button Text="Order "
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#311403"
+                            TextColor="#EFB897"
+                            CornerRadius="15"
+                            Margin="2"  
+                            Clicked="Button_Clicked"
+                    />
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
