@@ -66,8 +66,9 @@ namespace task1
 
                 if (isDelete)
                 {
-                    await DisplayAlert("Success", $"{Name} has been deleted", "OK");
                     OnAppearing();
+                    await DisplayAlert("Success", $"{Name} has been deleted", "OK");
+                    
                 }
                 else
                 {
