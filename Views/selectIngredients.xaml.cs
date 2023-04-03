@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using add_ingredients.Models;
 using add_ingredients.View_models;
 using Xamarin.Forms;
+using System.Diagnostics;
 using Xamarin.Forms.Xaml;
 
 namespace add_ingredients.Views
@@ -13,34 +14,61 @@ namespace add_ingredients.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class selectIngredients : ContentPage
     {
+        IngredientsViewModel ingredientsViewModel;
         public selectIngredients()
         {
             InitializeComponent();
-            BindingContext = new IngredientsViewModel();
-           
+            ingredientsViewModel = new IngredientsViewModel();
+            BindingContext = ingredientsViewModel;
+
+            ingredientList.RefreshCommand = new Command(async () =>
+            {
+                await ingredientsViewModel.GetAll();
+                ingredientList.IsRefreshing = false;
+            });
+        }
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                var ingredient = await ingredientsViewModel.LoadDataLocally();
+                if (ingredient == null)
+                {
+                    ingredient = await ingredientsViewModel.GetAll();
+                    await ingredientsViewModel.SaveDataLocally(ingredient);
+                }
+                ingredientList.ItemsSource = ingredient;
+                ingredientList.IsRefreshing = false;
+            }
+            catch (Exception ex)
+            {
+                // handle the exception here, e.g. display an error message
+                Debug.WriteLine(ex.Message);
+            }
+
         }
 
         private void backButtonClicked(object sender, EventArgs e)
         {
          
         }
-        
+       
         private bool thereIsSelectedIngredient()
         {
           
 
-            foreach (var item in ((IngredientsViewModel)BindingContext).Ingredients)
-            {
-                var viewCell = ingredientList.ItemTemplate.CreateContent() as ViewCell;
-                viewCell.BindingContext = item;
+            //foreach (var item in ingredientList)
+            //{
+            //    var viewCell = ingredientList.ItemTemplate.CreateContent() as ViewCell;
+            //    viewCell.BindingContext = item;
 
-                var imageButton = viewCell.FindByName<ImageButton>("addImageButton");
-                if (imageButton.Source != null && imageButton.Source.ToString() == "File: Check.png")
-                {
-                  
-                    return true;
-                }
-            }
+            //    var imageButton = viewCell.FindByName<ImageButton>("addImageButton");
+            //    if (imageButton.Source != null && imageButton.Source is FileImageSource fileImageSource && imageButton.Source.ToString() == "File: Check.png")
+            //    {
+
+            //        return true;
+            //    }
+            //}
 
             return false;
 
