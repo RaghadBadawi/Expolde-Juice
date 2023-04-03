@@ -1,51 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-
 using System.Linq;
-using Newtonsoft.Json;
 using Firebase.Database;
-using System.Text;
-
+using System.Diagnostics;
 using add_ingredients.Models;
 using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
+using Xamarin.Essentials;
+using Newtonsoft.Json;
 namespace add_ingredients.View_models
 {
-    public class IngredientsViewModel : INotifyPropertyChanged
+    public class IngredientsViewModel 
     {
-        //private  FirebaseClient firebase;
-        public ObservableCollection<Ingredient> Ingredients { get; set; } = new ObservableCollection<Ingredient>();
+        FirebaseClient firebaseClient = new FirebaseClient("https://explodejuice-6dbab-default-rtdb.firebaseio.com/");
+        public List<ingredientModel> Ingredients { get; set; }
 
         public IngredientsViewModel()
         {
-
-            // populate the fruit list
-            string appleImageSource = new FileImageSource { File = "Apple.png" };
-            Ingredients.Add(new Ingredient { IngredientName = "Apple", image = appleImageSource, IngredientType = "fruits" });
-            string bananaImageSource = new FileImageSource { File = "banana.png" };
-            Ingredients.Add(new Ingredient { IngredientName = "Banana", image = bananaImageSource, IngredientType = "fruits" });
-            // add more fruits as needed
-            //firebase = new FirebaseClient("https://explodejuice-6dbab-default-rtdb.firebaseio.com/");
+            Ingredients = new List<ingredientModel>();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
+        public async Task SaveDataLocally(List<ingredientModel> ingredients)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            var json = JsonConvert.SerializeObject(ingredients);
+            await SecureStorage.SetAsync("ingredients", json);
         }
-
-        //public async Task<List<Ingredient>> GetIngredientsAsync()
-        //{
-        //    // Query Firebase database to retrieve ingredients data.
-        //    var ingredientsData = await firebase.Child("ingredients").OnceAsync<Ingredient>();
-
-        //    // Deserialize the retrieved data into a list of Ingredient objects.
-        //    var ingredients = ingredientsData.Select(d => JsonConvert.DeserializeObject<Ingredient>(d.Object.ToString())).ToList();
-
-        //    return ingredients;
-        //}
+        public async Task<List<ingredientModel>> LoadDataLocally()
+        {
+            var json = await SecureStorage.GetAsync("ingredients");
+            if (json != null)
+            {
+                return JsonConvert.DeserializeObject<List<ingredientModel>>(json);
+            }
+            return null;
+        }
+        public async Task<List<ingredientModel>> GetAll()
+        {
+            try
+            {
+                var ingredients = (await firebaseClient.Child(nameof(ingredientModel)).OnceAsync<ingredientModel>()).Select(item => new ingredientModel
+                {
+                    Name = item.Object.Name,
+                    ImagePath = item.Object.ImagePath,
+                    Description = item.Object.Description,
+                    Id = item.Key
+                }).ToList();
+                Ingredients = ingredients;
+                return ingredients;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Ingredients = null;
+                throw new Exception("Error getting ingredients from Firebase");
+            }
+        }
     }
 }
