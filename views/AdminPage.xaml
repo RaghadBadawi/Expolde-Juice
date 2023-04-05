@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Userprofile.views.AdminPage">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}" Spacing="160" >
+            <StackLayout  Orientation="Horizontal" >
+            <ImageButton Style="{StaticResource allImageButtons}" Source="https://raw.githubusercontent.com/RaghadBadawi/Expolde-Juice/story-2/Male%20User.png?token=GHSAT0AAAAAACACCOGWZDWWKQBVUTNQSVDMZBN5RFA" HorizontalOptions="StartAndExpand"></ImageButton>
+            <ImageButton Style="{StaticResource allImageButtons}" Source="https://raw.githubusercontent.com/RaghadBadawi/Expolde-Juice/story-2/Notification.png?token=GHSAT0AAAAAACACCOGXMSD5VU2ZSCMY6HFOZBN5R2A" HorizontalOptions="EndAndExpand"></ImageButton>
+            </StackLayout>
+
+            <StackLayout Spacing="20" BackgroundColor="#FFF6F0"  HorizontalOptions="CenterAndExpand">
+                <Button x:Name="OrderMenu" 
+                        Text=" Order Menu  "
+                        FontSize="Body"
+                        WidthRequest="200"
+                        HeightRequest="80"
+                        HorizontalOptions="Center"
+                         BackgroundColor="#EFB897"
+                        TextColor="#311403"
+                        CornerRadius="10"
+                        Clicked="OrderMenu_Clicked"
+                        
+                        />
+                <Button x:Name="AddIngredients"                       
+                        Text=" Add Ingredients  "
+                        FontSize="Body"
+                        WidthRequest="200"
+                        HeightRequest="80"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#EFB897"
+                        TextColor="#311403"
+                        CornerRadius="10"
+                        Clicked="AddIngredients_Clicked"
+                                   
+                                    />
+                <Button x:Name="IngredientsList"
+                        Text="Ingredients List"
+                        FontSize="Body"
+                        WidthRequest="200"
+                        HeightRequest="80" 
+                        HorizontalOptions="Center"
+                        BackgroundColor="#EFB897"
+                        TextColor="#311403"
+                        CornerRadius="10"
+                        Clicked="IngredientsList_Clicked"
+                                  
+                                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
