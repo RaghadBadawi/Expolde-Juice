@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="add_ingredients.App">
 
     <Application.Resources>
         <Style TargetType="StackLayout" x:Key="MainStackLayout">
-            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Padding" Value="20"/>
             <Setter Property="BackgroundColor" Value="#FFF6F0"/>
 
         </Style>
@@ -22,7 +22,7 @@
 
         </Style>
         <Style TargetType="Label" x:Key="PageTitle">
-            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontSize" Value="30"/>
             <Setter Property="TextColor" Value="#311403"/>
             <Setter Property="HorizontalTextAlignment" Value="Center"/>
 
@@ -44,7 +44,7 @@
             <Setter Property="HasUnevenRows" Value="False"/>
             <Setter Property="SeparatorColor" Value="Transparent"/>
             <Setter Property="SeparatorVisibility" Value="None"/>
-           
+            <Setter Property="RowHeight" Value="100"/>
         </Style>
         
         <Style TargetType="Button" x:Key="actionButton">
