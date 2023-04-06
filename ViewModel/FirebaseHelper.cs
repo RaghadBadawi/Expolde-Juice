@@ -6,8 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using signup.Models;
-namespace signup.ViewModel
+using ExplodeJuice.Models;
+namespace ExplodeJuice.ViewModel
 {
     public class FirebaseHelper
     {
