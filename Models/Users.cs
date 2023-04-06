@@ -1,5 +1,5 @@
 ﻿using System;
-namespace signup.Models
+namespace ExplodeJuice.Models
 {
     public class Users
     {
