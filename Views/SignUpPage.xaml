@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="signup.Views.SignUpPage">
+    x:Class="ExplodeJuice.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout Padding="20" BackgroundColor="#FFF6F0" Spacing="20">
             <Label Text="SignUp" FontSize="40" TextColor="#311403" >
