@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using signup.ViewModel;
+using ExplodeJuice.ViewModel;
 using Xamarin.Forms;
 
-namespace signup.Views
+namespace ExplodeJuice.Views
 {	
 	public partial class SignUpPage : ContentPage
 	{
