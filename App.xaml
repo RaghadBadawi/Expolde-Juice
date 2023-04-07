@@ -45,6 +45,8 @@
             <Setter Property="SeparatorColor" Value="Transparent"/>
             <Setter Property="SeparatorVisibility" Value="None"/>
             <Setter Property="RowHeight" Value="100"/>
+            
+
         </Style>
         
         <Style TargetType="Button" x:Key="actionButton">
@@ -54,12 +56,17 @@
             <Setter Property="HeightRequest" Value="40"/>
 
         </Style>
+        
         <Style TargetType="Frame" x:Key="popUpFrame">
             <Setter Property="BackgroundColor" Value="#EFB897"/>
             <Setter Property="CornerRadius" Value="10"/>
-           
-
         </Style>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#FFF6F0"/>
+            <Setter Property="BarTextColor" Value="#311403"/>
+        </Style>
+
 
 
     </Application.Resources>
