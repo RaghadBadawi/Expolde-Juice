@@ -1,16 +1,15 @@
 ﻿using System;
 namespace ExplodeJuice
 {
-	public class ingredient
-	{
-		public int IngredientID { get; set; }
-        public string IngredientName { get; set; }
-        public string IngredientType { get; set; }
-        public string QuantityInStock { get; set; }
-        public string ExpirationDate { get; set; }
-        public string image { get; set; }
+	internal class ingredientModel
+    {
+       
+            public string ImagePath { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string Id { get; set; }  
+        
     }
-
 
 }
 
