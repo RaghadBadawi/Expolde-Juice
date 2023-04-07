@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="task1.ingredientList">
+
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}">
+          
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Text="Ingredients List" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+
+            <ListView x:Name="itemListView" 
+                      Style="{StaticResource ingredientListView}"
+                      ItemSelected="itemListView_ItemSelected" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,10">
+                                <StackLayout Style="{StaticResource ListItme}" HeightRequest="100">
+
+                                    <Image  Source="{Binding ImagePath}" Aspect="AspectFit"/>
+                                    <StackLayout >
+                                        <Label Text="{Binding Name}"
+                                       FontSize="Large"
+                                           TextColor="#311403"/>
+                                        <Label Text="{Binding Description}" 
+                                       FontSize="Medium"
+                                           TextColor="#311403"/>
+
+                                    </StackLayout>
+
+                                    <ImageButton Source="bin.png" 
+                                                 x:Name="delete_Button"  
+                                                 Style="{StaticResource allImageButtons}"
+                                                  Margin="0,0,10,0"
+                                                 Clicked="delete_Button_Clicked"  
+                                                Command="{Binding DeleteCommand}" 
+                                                 CommandParameter="{Binding .}" 
+                                                 HorizontalOptions="EndAndExpand" />
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
