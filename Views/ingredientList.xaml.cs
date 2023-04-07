@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +14,7 @@ namespace task1
     {
         ingredientRepository ingredientrepository = new ingredientRepository();
 
+        [Obsolete]
         public ingredientList()
         {
             InitializeComponent();
@@ -23,10 +24,9 @@ namespace task1
                 OnAppearing();
             });
 
-
-       
-             //_ = ingredientrepository.insertAsync();
    
+            //_ = ingredientrepository.insertAsync();
+
 
 
         }
@@ -54,7 +54,7 @@ namespace task1
 
 
             var button = (ImageButton)sender;
-           
+
             var ingredient = (ingredientModel)button.BindingContext;
             var Name = ingredient.Name; // get the name of the ingredient
             var wantDelete = await DisplayAlert("Delete?", $"are you sure to delete {Name}", "Yes", "No");
@@ -66,9 +66,8 @@ namespace task1
 
                 if (isDelete)
                 {
-                    OnAppearing();
                     await DisplayAlert("Success", $"{Name} has been deleted", "OK");
-                    
+                    OnAppearing();
                 }
                 else
                 {
@@ -77,19 +76,17 @@ namespace task1
                 }
 
             }
-            else
-            {
-                await DisplayAlert("Error", $"{Name} delete fill", "OK");
+       
 
-            }
+
 
         }
 
         protected override async void OnAppearing()
         {
-            var students = await ingredientrepository.GetAll();
+            var ingredients = await ingredientrepository.GetAll();
             itemListView.ItemsSource = null;
-            itemListView.ItemsSource = students;
+            itemListView.ItemsSource = ingredients;
             itemListView.IsRefreshing = false;
 
         }
