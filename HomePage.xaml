@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.HomePage">
+    <ContentPage.Content>
+        
+        <StackLayout Style="{StaticResource MainStackLayout}">
+            
+            <StackLayout Margin="20" Orientation="Horizontal">
+                <ImageButton Style="{StaticResource allImageButtons}" Source="MaleUser.png" HorizontalOptions="StartAndExpand" Clicked="profileButtonClicked"></ImageButton>
+                <ImageButton Style="{StaticResource allImageButtons}" Source="Notification.png" HorizontalOptions="EndAndExpand"></ImageButton>
+            </StackLayout>
+            <Label Style="{StaticResource PageTitle}" Text="Welcome" HorizontalOptions="Start"></Label>
+            <Label Style="{StaticResource itemTitle}" Text="Enjoy now while creating your juice" HorizontalOptions="Start"></Label>
+
+            <Frame CornerRadius="20" BackgroundColor="#EFB897" Padding="20" Margin="0,20,0,0">
+                <StackLayout HeightRequest="250" VerticalOptions="Center">
+                    <Label Style="{StaticResource itemTitle}" Text="Create a custom drink" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{StaticResource itemTitle}" Text="experience the best flavor combination" Margin="0,30,0,0" />
+                        <Image HeightRequest="200" WidthRequest="100" Source="mainJuice.png" HorizontalOptions="EndAndExpand" Grid.Column="1" />
+                    </Grid>
+                    <Button Style="{StaticResource actionButton}" VerticalOptions="EndAndExpand" HorizontalOptions="Start" WidthRequest="170" Text="start create" Clicked="startCreateButtonClicked"/>
+                </StackLayout>
+            </Frame>
+            <Label Style="{StaticResource PageTitle}" Text="Popular Drinks" HorizontalOptions="StartAndExpand" Margin="0,30,0,0"/>
+            
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
