@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.Log_in">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}" Spacing="30">
+            <Label Text="Login" Style="{StaticResource PageTitle}" HorizontalOptions="StartAndExpand" >
+            </Label>
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" >
+                <Entry x:Name="UsernameEntry" Placeholder="Username" Keyboard="Email" Text="{Binding Email}" PlaceholderColor="#311403"  />
+            </Frame>
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20">
+                <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Text="{Binding Password}" PlaceholderColor="#311403"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="checkBoxButton"
+                          BackgroundColor="White"
+                          HeightRequest="30"
+                          WidthRequest="30"
+                          HorizontalOptions="Start"
+                          Color="#311403"
+                          CheckedChanged="CheckBoxButton_CheckedChanged"/>
+
+                <Label Text="Remember Me" 
+                       Style="{StaticResource itemTitle}"
+                       HorizontalOptions="Start"/>
+
+
+            </StackLayout>
+            <Button x:Name="loginButton" 
+                    Text="Login" 
+                    Style="{StaticResource actionButton}"
+                    Clicked="LoginButtonClicked" 
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Style="{StaticResource itemTitle}" Text="Don't have an account?" />
+                <Label Style="{StaticResource itemTitle}" Text="SignUp" FontAttributes="Bold" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
