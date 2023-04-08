@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.orderdrinkpage">
+      <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#FFF6F0" Padding="10" >
+            <Grid Padding="2">
+                <ImageButton Source="LoveCircled.png"
+                             HorizontalOptions="End"
+                             BackgroundColor="#FFF6F0"
+                             Clicked="ImageButton_Clicked">
+                </ImageButton>
+                <ImageButton Source="keyboardarrowleft.png"
+                             HorizontalOptions="Start"
+                             BackgroundColor="#FFF6F0"
+                             Clicked="ImageButton_Clicked_1">
+                </ImageButton>
+            </Grid>
+            
+            <Image x:Name="reddrink" 
+                   Source="reddrink.png"  />
+            
+            <Frame BackgroundColor="#EFB897" 
+                   CornerRadius="15"  
+                   Padding="5"
+                   
+                   >
+            <StackLayout  BackgroundColor="#EFB897" 
+                          Spacing="10"  >
+                <Label Text="Wild berry Mix  "
+                       FontSize="25"
+                       TextColor="#311403"
+                       Padding="5"/>
+                <Label Text="Ingredients"
+                       FontSize="20"
+                       TextColor="#311403"
+                       Padding="5"
+                   />
+                <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="18"
+                    >
+                    <ImageButton Source="Blueberry.png" 
+                                 BackgroundColor="#FFF6F0" 
+                                 CornerRadius="7" 
+                                 HeightRequest="70" 
+                                 WidthRequest="70"
+                                 Clicked="ImageButton_Clicked_4"    
+                                 >
+                    </ImageButton>
+                    <ImageButton Source="Strawberry.png" 
+                                 BackgroundColor="#FFF6F0" 
+                                 CornerRadius="7" 
+                                 HeightRequest="70" 
+                                 WidthRequest="70"
+                                 Clicked="ImageButton_Clicked_2"
+                                     >
+                    </ImageButton>
+                    <ImageButton Source="Raspberry.png" 
+                                 BackgroundColor="#FFF6F0" 
+                                 CornerRadius="7"
+                                 HeightRequest="70" 
+                                 WidthRequest="70"
+                                 Clicked="ImageButton_Clicked_3"        
+                                     >
+                    </ImageButton>
+                </StackLayout>
+                <Label Text="Comment"
+                       FontSize="20"
+                       TextColor="#311403"
+                       Padding="4"
+                           />
+                <Frame CornerRadius="10" 
+                       Padding="0,0,3,0" 
+                       Margin="10">
+                    <Editor Placeholder="Add Comment"
+                            PlaceholderColor="#311403"
+                            TextColor="#311403" 
+                            BackgroundColor="#FFFFFF"
+                            HeightRequest="60"
+                           
+                            >
+                    </Editor>
+                </Frame>
+                <Button Text="Order "
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#311403"
+                        TextColor="#EFB897"
+                        CornerRadius="15"
+                        Padding="10" 
+                        Clicked="Button_Clicked"
+                    />
+
+
+            </StackLayout>
+            </Frame>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
