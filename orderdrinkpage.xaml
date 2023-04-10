@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.orderdrinkpage">
-      <ContentPage.Content>
+     <ContentPage.Content>
 
         <StackLayout BackgroundColor="#FFF6F0" Padding="10" >
             <Grid Padding="2">
-                <ImageButton Source="LoveCircled.png"
+                <ImageButton x:Name="bookmark" 
+                             Source="Bookmark1.png"
                              HorizontalOptions="End"
                              BackgroundColor="#FFF6F0"
-                             Clicked="ImageButton_Clicked">
+                             Clicked="bookmark_Clicked">
                 </ImageButton>
                 <ImageButton Source="keyboardarrowleft.png"
                              HorizontalOptions="Start"
@@ -28,11 +29,19 @@
                    >
             <StackLayout  BackgroundColor="#EFB897" 
                           Spacing="10"  >
-                <Label Text="Wild berry Mix  "
-                       FontSize="25"
-                       TextColor="#311403"
-                       Padding="5"/>
-                <Label Text="Ingredients"
+                    <Frame CornerRadius="10" 
+                           Padding="5,0,0,0" 
+                           BackgroundColor="#00ffffff">
+                        <Entry Placeholder="entur name drink"
+                               PlaceholderColor="#362a23"
+                               
+                               FontSize="25"
+                               TextColor="#311403"
+                               Keyboard="Text"
+                      
+                       />
+                    </Frame>
+                    <Label Text="Ingredients"
                        FontSize="20"
                        TextColor="#311403"
                        Padding="5"
@@ -76,7 +85,7 @@
                        Padding="0,0,3,0" 
                        Margin="10">
                     <Editor Placeholder="Add Comment"
-                            PlaceholderColor="#311403"
+                            PlaceholderColor="#362a23"
                             TextColor="#311403" 
                             BackgroundColor="#FFFFFF"
                             HeightRequest="60"
