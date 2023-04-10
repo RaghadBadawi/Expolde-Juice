@@ -16,10 +16,21 @@ namespace App3
         {
             InitializeComponent();
         }
-
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private void bookmark_Clicked(object sender, EventArgs e)
         {
+              var addImageButton = (ImageButton)sender;
 
+                if (addImageButton.Source != null && addImageButton.Source.ToString() == "File: Bookmark1.png")
+                {
+
+                    addImageButton.Source = "Bookmark.png";
+                }
+                else
+                {
+                    addImageButton.Source = "Bookmark1.png";
+                }
+
+           
         }
 
         private void ImageButton_Clicked_1(object sender, EventArgs e)
