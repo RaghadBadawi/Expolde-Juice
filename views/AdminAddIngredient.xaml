@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Userprofile.views.AdminAddIngredient">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}" Spacing="50">
+            <Label Style="{StaticResource itemTitle}"
+                   Text=" New Ingredients "></Label>
+
+            <ImageButton x:Name="photo"
+                         Source="Vector.png"
+                         BackgroundColor="#00ffffff"/>
+            <Frame Style="{StaticResource popUpFrame}">
+                <StackLayout Padding="10"  Spacing="40" >
+                    
+                    <Entry Style="{StaticResource entryname}" 
+                   x:Name="Name"/>
+                    <Editor Style="{StaticResource editorname}" 
+                        x:Name="description"
+                        HeightRequest="200">
+                    </Editor>
+                    <Button  Style="{StaticResource actionButton}"
+                         Text="save "
+                         x:Name="save"/>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
