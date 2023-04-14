@@ -14,13 +14,15 @@
                 <StackLayout Padding="10"  Spacing="10" >
                     <Frame CornerRadius="10" BackgroundColor="#FFF6F0">
                         <Entry Style="{StaticResource entryname}" 
-                           x:Name="Name"
-                           BackgroundColor="#FFF6F0"
+                               Placeholder="Ingredient Name"
+                               x:Name="Name"
+                               BackgroundColor="#FFF6F0"
                            
                            />
                     </Frame>
                     <Frame CornerRadius="10" BackgroundColor="#FFF6F0">
                     <Editor Style="{StaticResource editorname}" 
+                            Placeholder="Description"
                             x:Name="description"
                             HeightRequest="150"
                             BackgroundColor="#FFF6F0"></Editor>
