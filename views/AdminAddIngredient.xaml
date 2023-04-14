@@ -2,26 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Userprofile.views.AdminAddIngredient">
-    <ContentPage.Content>
+      <ContentPage.Content>
         <StackLayout Style="{StaticResource MainStackLayout}" Spacing="50">
-            <Label Style="{StaticResource itemTitle}"
+            <Label Style="{StaticResource PageTitle}"
                    Text=" New Ingredients "></Label>
 
             <ImageButton x:Name="photo"
                          Source="Vector.png"
                          BackgroundColor="#00ffffff"/>
-            <Frame Style="{StaticResource popUpFrame}">
-                <StackLayout Padding="10"  Spacing="40" >
-                    
-                    <Entry Style="{StaticResource entryname}" 
-                   x:Name="Name"/>
+            <Frame Style="{StaticResource popUpFrame}" >
+                <StackLayout Padding="10"  Spacing="10" >
+                    <Frame CornerRadius="10" BackgroundColor="#FFF6F0">
+                        <Entry Style="{StaticResource entryname}" 
+                           x:Name="Name"
+                           BackgroundColor="#FFF6F0"
+                           
+                           />
+                    </Frame>
+                    <Frame CornerRadius="10" BackgroundColor="#FFF6F0">
                     <Editor Style="{StaticResource editorname}" 
-                        x:Name="description"
-                        HeightRequest="200">
-                    </Editor>
+                            x:Name="description"
+                            HeightRequest="150"
+                            BackgroundColor="#FFF6F0"></Editor>
+                    </Frame>
                     <Button  Style="{StaticResource actionButton}"
-                         Text="save "
-                         x:Name="save"/>
+                             Text="save "
+                             x:Name="save"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             />
 
                 </StackLayout>
             </Frame>
