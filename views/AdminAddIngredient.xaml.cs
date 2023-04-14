@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using InsertIngredient.View_models;
+
 namespace InsertIngredients
 {
     public partial class InsertIngredient : ContentPage
