@@ -32,6 +32,26 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="TextColor" Value="#311403"/>
         </Style>
+      <Style TargetType="Entry" x:Key="entryname">
+            <Setter Property="BackgroundColor" Value="#EFB897"/>
+            <Setter Property="PlaceholderColor" Value="#311403"/>
+            <Setter Property="Keyboard" Value="Text"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Placeholder" Value=" Ingredient Name"/>
+            <Setter Property="TextColor" Value="#311403"/>
+
+
+        </Style>
+        <Style TargetType="Editor" x:Key="editorname">
+            <Setter Property="BackgroundColor" Value="#EFB897"/>
+            <Setter Property="TextColor" Value="#311403"/>
+            <Setter Property="PlaceholderColor" Value="#311403"/>
+            <Setter Property="Keyboard" Value="Text"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Placeholder" Value="  Description "/>
+
+        </Style>
+
 
         <Style TargetType="ImageButton" x:Key="allImageButtons">
             <Setter Property="HeightRequest" Value="30"/>
