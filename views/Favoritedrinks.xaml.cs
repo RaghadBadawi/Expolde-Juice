@@ -47,14 +47,14 @@ namespace Userprofile.views
         {
             var addImageButton = (ImageButton)sender;
 
-            if (addImageButton.Source != null && addImageButton.Source.ToString() == "File:favorite.png")
+            if (addImageButton.Source != null && addImageButton.Source.ToString() == "File:Heart.png")
             {
 
-                addImageButton.Source = "Heart.png";
+                addImageButton.Source = "favorite.png";
             }
             else
             {
-                addImageButton.Source = "favorite.png";
+                addImageButton.Source = "Heart.png";
             }
         }
     }
