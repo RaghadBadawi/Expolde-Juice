@@ -55,6 +55,7 @@ namespace add_ingredients.Views
 
             Password.InputTransparent = false;
             FirstName.InputTransparent = false;
+            LastName.InputTransparent = false;  
             Email.InputTransparent = false;
             Phone.InputTransparent = false;
             Save.IsVisible = true;
