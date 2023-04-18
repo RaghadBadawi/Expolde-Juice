@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Userprofile.views.Favoritedrinks">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}">
+           
+            <Label Style="{StaticResource PageTitle}"
+                   Text="Favourites">
+            </Label>
+            <ListView x:Name="itemListView"
+                      Style="{StaticResource ingredientListView}"
+                      ItemSelected="itemListView_ItemSelected">
+                <ListView.ItemTemplate  >
+                    <DataTemplate >
+                        <ViewCell >
+                            <Frame HasShadow="True" 
+                                   CornerRadius="10" 
+                                   Padding="1" 
+                                   Margin="0,0,0,10">
+                                <StackLayout Style="{StaticResource ListItme}" 
+                                             HeightRequest="100">
+                                    <Image  Source="{Binding ImageUrl}" 
+                                            Aspect="AspectFit"/>
+                                    <StackLayout >
+                                        <Label Text="{Binding Name}"
+                                               FontSize="Large"
+                                               TextColor="#311403"/>
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="Medium"
+                                               TextColor="#311403"/>
+                                        <ImageButton />
+                                    </StackLayout>
+                                    <ImageButton Source="FAVORETBUTON.png" 
+                                                 x:Name="FAVORETBUTON"  
+                                                 Style="{StaticResource allImageButtons}"
+                                                 Margin="0,0,10,0"
+                                                 Clicked="FAVORETBUTON_Clicked"
+                                                 Command="{Binding DeleteCommand}" 
+                                                 CommandParameter="{Binding .}" 
+                                                 HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
