@@ -4,11 +4,21 @@
              x:Class="task1.ingredientList">
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource MainStackLayout}">
+        <StackLayout Orientation="Vertical" Style="{StaticResource MainStackLayout}">
           
-            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-                <Label Text="Ingredients List" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+           <StackLayout Orientation="Horizontal">
+                <Label x:Name="TitlePage" Text="Ingredients List" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" />
+                
+                <ImageButton Style="{StaticResource allImageButtons}" Source="search.png" x:Name="SearchIcon" Clicked="SearchIcon_Clicked_1" HorizontalOptions="End" />
+              
+                <SearchBar x:Name="SearchBar"
+                    Placeholder="Search about ingresient"
+                HorizontalOptions="CenterAndExpand" 
+                  IsVisible="False"
+                   TextChanged="SearchBar_TextChanged"
+                           />
             </StackLayout>
+          
 
             <ListView x:Name="itemListView" 
                       Style="{StaticResource ingredientListView}"
