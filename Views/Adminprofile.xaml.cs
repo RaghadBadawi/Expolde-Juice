@@ -74,6 +74,10 @@ namespace add_ingredients.Views
             Phone.InputTransparent = true;
 
         }
+        private async void logout_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Log_in());
+        }
     }
 
 }
