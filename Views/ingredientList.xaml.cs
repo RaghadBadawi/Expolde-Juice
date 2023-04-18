@@ -24,10 +24,7 @@ namespace task1
                 OnAppearing();
             });
 
-   
-            //_ = ingredientrepository.insertAsync();
-
-
+  
 
         }
 
@@ -95,7 +92,22 @@ namespace task1
 
 
 
+     private void SearchIcon_Clicked_1(object sender, EventArgs e)
+        {
+            Label label = this.FindByName<Label>("TitlePage");
+            label.IsVisible = false;
+            SearchBar searchBar = this.FindByName<SearchBar>("SearchBar");
+            searchBar.IsVisible = true;
+            ImageButton imageButton = this.FindByName<ImageButton>("SearchIcon");
+            imageButton.IsVisible = false;
+            
 
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+             itemListView.ItemsSource = ingredients.Where(s=>s.Name.StartsWith(e.NewTextValue, StringComparison.OrdinalIgnoreCase)); 
+        }
 
 
 
