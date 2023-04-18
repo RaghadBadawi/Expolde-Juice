@@ -31,7 +31,7 @@
                                                TextColor="#311403"/>
                                         <ImageButton />
                                     </StackLayout>
-                                    <ImageButton Source="FAVORETBUTON.png" 
+                                    <ImageButton Source="Heart.png" 
                                                  x:Name="FAVORETBUTON"  
                                                  Style="{StaticResource allImageButtons}"
                                                  Margin="0,0,10,0"
