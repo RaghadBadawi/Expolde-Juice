@@ -6,9 +6,9 @@ using System.Text;
 using Xamarin.Forms;
 using InsertIngredient.View_models;
 
-namespace InsertIngredients
+namespace AdminAddIngredient
 {
-    public partial class InsertIngredient : ContentPage
+    public partial class AdminAddIngredient : ContentPage
     {
         public Entry EntryName => Name;
         public Editor Descreption => description;
