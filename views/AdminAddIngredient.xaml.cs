@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using InsertIngredients.View_models;
 using Xamarin.Forms;
-using InsertIngredient.View_models;
-
-namespace AdminAddIngredient
+namespace InsertIngredients
 {
-    public partial class AdminAddIngredient : ContentPage
+    public partial class InsertIngredient : ContentPage
     {
         public Entry EntryName => Name;
-        public Editor Descreption => description;
+        public Editor Descreption => Description;
 
         public InsertIngredient(ingredientModel ingredient)
         {
@@ -19,7 +18,7 @@ namespace AdminAddIngredient
             if (ingredient != null)
             {
                 Name.Text = ingredient.Name;
-                description.Text = ingredient.Description;
+                Description.Text = ingredient.Description;
             }
         }
 
@@ -33,13 +32,13 @@ namespace AdminAddIngredient
 
 
 
-        private void save_Clicked(object sender, EventArgs e)
+        private void Save_Clicked(object sender, EventArgs e)
         {
             ingredientModel item = new ingredientModel();
             ingredientRepository ingredientRepository = new ingredientRepository();
-            _ = ingredientRepository.AddTheIngredient(Name.Text, description.Text);
+            _ = ingredientRepository.AddTheIngredient(Name.Text, Description.Text);
             Name.Text = string.Empty;
-            description.Text = string.Empty;
+            Description.Text = string.Empty;
             _ = DisplayAlert("Success", "Ingredient Added Successfully", "OK");
 
         }
