@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Userprofile.views.AdminAddIngredient">
-      <ContentPage.Content>
+             x:Class="InsertIngredients.InsertIngredient">
+
+    <ContentPage.Content>
         <StackLayout Style="{StaticResource MainStackLayout}" Spacing="50">
             <Label Style="{StaticResource PageTitle}"
                    Text=" New Ingredients "></Label>
@@ -21,7 +22,7 @@
                            />
                     </Frame>
                     <Frame CornerRadius="10" BackgroundColor="#FFF6F0">
-                    <Editor Style="{StaticResource editorname}" 
+                        <Editor Style="{StaticResource editorname}" 
                             Placeholder="Description"
                             x:Name="description"
                             HeightRequest="150"
@@ -38,4 +39,5 @@
             </Frame>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>
