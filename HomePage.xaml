@@ -8,7 +8,9 @@
             
             <StackLayout Margin="20" Orientation="Horizontal">
                 <ImageButton Style="{StaticResource allImageButtons}" Source="MaleUser.png" HorizontalOptions="StartAndExpand" Clicked="profileButtonClicked"></ImageButton>
-                <ImageButton Style="{StaticResource allImageButtons}" Source="Notification.png" HorizontalOptions="EndAndExpand"></ImageButton>
+                <!--<ImageButton Style="{StaticResource allImageButtons}" Source="Notification.png" HorizontalOptions="EndAndExpand"></ImageButton>-->
+                <ImageButton Style="{StaticResource allImageButtons}" Source="Recipe.png" HorizontalOptions="EndAndExpand" Clicked="recipeButton"></ImageButton>
+
             </StackLayout>
             <Label Style="{StaticResource PageTitle}" Text="Welcome" HorizontalOptions="Start"></Label>
             <Label Style="{StaticResource itemTitle}" Text="Enjoy now while creating your juice" HorizontalOptions="Start"></Label>
@@ -31,6 +33,6 @@
             
 
         </StackLayout>
-        
+       
     </ContentPage.Content>
 </ContentPage>
