@@ -26,12 +26,19 @@ namespace add_ingredients.Views
 
         private void startCreateButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new selectIngredients());
+            Navigation.PushAsync(new selectIngredients(me));
         }
 
         private void profileButtonClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new userprofile(me));
+        }
+
+        void recipeButton(System.Object sender, System.EventArgs e)
+        {
+            
+            Navigation.PushAsync(new yourRecipe(me));
+
         }
     }
 }
