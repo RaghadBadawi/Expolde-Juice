@@ -38,15 +38,14 @@ namespace Userprofile.ViewModel
 
         public async Task Updateuser(string email, string firstName, string lastName, string phone, string password)
 {
-    var firebase = new FirebaseClient("your firebase database url");
-    var admin = (await firebase.Child("Admins").OnceAsync<Users>()).Where(a => a.Object.Email == email).FirstOrDefault();
-    if (admin != null)
+    var user = (await firebase.Child("Users").OnceAsync<Users>()).Where(a => a.Object.Email == email).FirstOrDefault();
+    if (user != null)
     {
         admin.Object.FirstName = firstName;
         admin.Object.LastName = lastName;
         admin.Object.Phone = phone;
         admin.Object.Password = password;
-        await firebase.Child("Admins").Child(admin.Key).PutAsync(admin.Object);
+        await firebase.Child("Users").Child(user.Key).PutAsync(user.Object);
     }
 }
 
