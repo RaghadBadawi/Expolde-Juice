@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.OrderMenuPage">
+    <ContentPage.Content>
+        <StackLayout  Style="{StaticResource MainStackLayout}">
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Label Text="Order Menu" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+            <Label x:Name="noOrdersLabel" Text="No Orders" Style="{StaticResource itemTitle}" IsVisible="false" HorizontalOptions="Center"/>
+            <ListView x:Name="OrderList"
+                      ItemsSource="{Binding Orders}" 
+                      IsVisible="false" 
+                      Style="{StaticResource ingredientListView}" 
+                      ItemTapped="onOrderTapped" 
+                      ItemSelected="orderSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,20">
+                                <StackLayout Style="{StaticResource ListItme}" Padding="5">
+                                    <Label Text="{Binding Name}" Style="{StaticResource itemTitle}" HeightRequest="30" VerticalTextAlignment="Center"/>
+                                    <!--<Image x:Name="status" Source="Question_Mark.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand"/>-->
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
