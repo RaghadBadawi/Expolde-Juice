@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="add_ingredients.Views.PopularDrinks">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}">
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,20" >
+                <Frame
+                       CornerRadius="100" 
+                       BackgroundColor="#EFB897"
+                       HeightRequest="30"
+                       WidthRequest="500"
+                    HorizontalOptions="StartAndExpand"
+                    
+                       >
+                    <SearchBar x:Name="SearchBar"
+                              
+                           Placeholder="search "
+                           TextChanged="SearchBar_TextChanged"
+                           TextColor="#362a23"
+                           PlaceholderColor="#362a23"
+                           CancelButtonColor="#362a23"
+                               
+                               
+                               
+                          />
+
+                </Frame>
+
+
+
+            </StackLayout>
+
+            <ListView x:Name="popularDrinkListView" 
+                      Style="{StaticResource ingredientListView}"
+                      ItemSelected="ItemListView_ItemSelected" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell Tapped="PopularDrink_Tapped">
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,20" >
+                                <StackLayout Style="{StaticResource ListItme}" HeightRequest="100" Padding="5">
+
+                                    <Image Margin="10" Source="{Binding Recipe.ImageUrl}" Aspect="AspectFit"/>
+                                    <StackLayout >
+                                        <Label Text="{Binding Recipe.Name}"
+                                               Style="{StaticResource itemTitle}" Margin="0,10,10,10" VerticalOptions="CenterAndExpand"/>
+
+                                    </StackLayout>
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.FavoriteDrinks">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}">
+
+            <Label Style="{StaticResource PageTitle}"
+                   Text="Favourites">
+            </Label>
+            <ListView x:Name="itemListView"
+                      Style="{StaticResource ingredientListView}"
+                      ItemSelected="FavoriteDrinkSelected"
+                      ItemTapped="FavoriteDrinkTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell >
+                            <Frame HasShadow="True" 
+                                   CornerRadius="10" 
+                                   Padding="1" 
+                                   Margin="0,0,0,10">
+                                <StackLayout Style="{StaticResource ListItme}" 
+                                             HeightRequest="100" Padding="10">
+                                    
+                                    <StackLayout >
+                                        <Label Text="{Binding Recipe.Name}"
+                                               FontSize="Large"
+                                               TextColor="#311403"
+                                               VerticalOptions="CenterAndExpand"/>
+                                     
+                                    </StackLayout>
+                                    <ImageButton Source="Heart.png" 
+                                                 x:Name="FAVORETBUTON"  
+                                                 Style="{StaticResource allImageButtons}"
+                                                 Margin="0,0,10,0"
+                                                 Clicked="FAVORETBUTON_Clicked"
+                                                 Command="{Binding DeleteCommand}" 
+                                                 CommandParameter="{Binding .}" 
+                                                 HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

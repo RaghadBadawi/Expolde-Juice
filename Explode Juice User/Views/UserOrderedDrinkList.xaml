@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.UserOrderedDrinkList">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStackLayout}">
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Label Text="Orders" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+            <ListView x:Name="OrderList"
+                      ItemsSource="{Binding Order}" 
+                      Style="{StaticResource ingredientListView}" 
+                      ItemTapped="OrderTapped" 
+                      ItemSelected="OrderSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,10">
+                                <StackLayout Style="{StaticResource ListItme}" Padding="10">
+                                    <Label Text="{Binding Name}" Style="{StaticResource itemTitle}" HeightRequest="30" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

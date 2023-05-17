@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.OrderYourDrink"
+             >
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#FFF6F0" Padding="10">
+
+            <ImageButton x:Name="bookmark" 
+                             Source="Bookmark1.png"
+                             HorizontalOptions="End"
+                             Style="{StaticResource allImageButtons}"
+                             BackgroundColor="#FFF6F0"
+                             Clicked="SaveButtonClicked"
+                             CommandParameter="{Binding .}" >
+            </ImageButton>
+
+            <Image x:Name="drinkImage" 
+                   Source="juicePhoto.png"
+                   />
+            
+            <Frame BackgroundColor="#EFB897" 
+                   CornerRadius="15"  
+                   Padding="5"
+                   >
+                
+            <StackLayout  BackgroundColor="#EFB897" 
+                          Spacing="10" 
+                          Orientation="Vertical">
+
+                    <Frame CornerRadius="10" 
+                           Padding="5,0,5,0" 
+                           BackgroundColor="Transparent">
+                        <Entry Placeholder="Enter drink name "
+                              Style="{StaticResource entryName}"
+                               x:Name="drinkName"
+                               Text="{Binding Name}"
+                               FontSize="25"
+                               TextColor="#311403"
+                               Keyboard="Text"
+                      
+                       />
+                    </Frame>
+
+                    <Label Text="Ingredients"
+                       Style="{StaticResource itemTitle}"
+                       Padding="5"
+                     />
+                
+                <StackLayout Orientation="Horizontal"  Padding="10,0,10,0" HorizontalOptions="Center">
+                    
+                        <Image Source="arrowLeft"
+                               Aspect="AspectFit"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               HorizontalOptions="Start"/>
+                    
+                        <CollectionView ItemsSource="{Binding SelectedIngredients}" 
+                          HorizontalOptions="CenterAndExpand"             
+                          ItemsLayout="HorizontalList" >
+                            
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" Margin="20,0,20,0">
+                                        <Image Source="{Binding ImagePath}" 
+                                               Aspect="AspectFit" 
+                                               HeightRequest="70"
+                                               WidthRequest="70"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    
+                        <Image Source="arrowRight"
+                               Aspect="AspectFit"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               HorizontalOptions="End"/>
+
+                    </StackLayout>
+               
+                <Label Text="Comment"
+                         Style="{StaticResource itemTitle}"
+                       Padding="5"
+                           />
+                
+                <Frame CornerRadius="10" 
+                       Padding="0,0,3,0" 
+                       Margin="10">
+
+                        <Editor Placeholder="Add Comment"
+                           Style="{StaticResource editorName}"
+                              x:Name="commentEditor"
+                             Text="{Binding Comment}"
+                            >
+                        </Editor>
+                    </Frame>
+                
+                <Button Text="Order"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                      Style="{StaticResource actionButton}"
+                        Padding="10" 
+                        Clicked="OrderButtonClicked"
+                 />
+
+
+            </StackLayout>
+            </Frame>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+
+
+     

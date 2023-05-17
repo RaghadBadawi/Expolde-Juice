@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.SelectIngredients" >
+
+    <ContentPage.Content>
+        <StackLayout  Style="{StaticResource MainStackLayout}">
+
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Text="Add Ingredients" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+            <ListView x:Name="ingredientList" 
+                      ItemsSource="{Binding Ingredients}"
+                      Style="{StaticResource ingredientListView}"
+                      ItemSelected="IngredientListItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,20">
+                                <StackLayout Style="{StaticResource ListItme}" Padding="10">
+
+                                    <Image  Source="{Binding ImagePath}" 
+                                            Aspect="AspectFit"  
+                                            HeightRequest="70" 
+                                            WidthRequest="70"/>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}"
+                                       FontSize="Large"
+                                           TextColor="#311403"/>
+                                        <Label Text="{Binding Description}" 
+                                       FontSize="Medium"
+                                           TextColor="#311403"/>
+
+
+                                    </StackLayout>
+
+                                    <ImageButton  x:Name="addImageButton"
+                                                  Source="plus.png" 
+                                                  Style="{StaticResource allImageButtons}"
+                                                  HorizontalOptions="EndAndExpand"
+                                                  Margin="0,0,10,0"
+                                                  Clicked="AddImageButtonClicked"/>
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Frame x:Name="popupFrame"
+                   Style="{StaticResource popUpFrame}"
+                   Padding="20"
+                   IsVisible="false"
+                   HorizontalOptions="CenterAndExpand"
+                   WidthRequest="300">
+                <StackLayout>
+                    <Label Text="This is all your ingredients?" Style="{StaticResource itemTitle}" />
+                    <Button  x:Name="doneImageButton"
+                             Style="{StaticResource actionButton}"
+                             Text="Go to order page"
+                             WidthRequest="180"
+                             VerticalOptions="End"
+                             HorizontalOptions="Center"
+                             Margin="0,0,10,10"
+                             Clicked="DoneImageButtonClicked"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

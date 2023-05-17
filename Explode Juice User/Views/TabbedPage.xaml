@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.BarItemColor="#666666"
+            android:TabbedPage.BarSelectedItemColor="#311403"
+            xmlns:local="clr-namespace:add_ingredients.Models"
+            android:TabbedPage.ToolbarPlacement="Bottom" xmlns:add_ingredients="clr-namespace:add_ingredients.Views"
+             x:Class="add_ingredients.Views.TabbedPage"
+            >
+
+    <add_ingredients:HomePage
+        x:Name="home"
+        IconImageSource="Home.png">
+        <x:Arguments>
+            <local:User/>
+        </x:Arguments>
+
+    </add_ingredients:HomePage>
+    
+    <add_ingredients:YourRecipe 
+         x:Name="recipe"
+         IconImageSource="Recipe.png">
+        <x:Arguments>
+            <local:User/>
+        </x:Arguments>
+
+
+    </add_ingredients:YourRecipe>
+    
+    <add_ingredients:FavoriteDrinks   
+         x:Name="favoriteDrinks" 
+         IconImageSource="Favorite.png">
+        <x:Arguments>
+            <local:User/>
+        </x:Arguments>
+
+    </add_ingredients:FavoriteDrinks>
+    
+    <add_ingredients:PopularDrinks   
+         x:Name="popularDrinks" 
+         IconImageSource="searchOff.png">
+        <x:Arguments>
+            <local:User/>
+        </x:Arguments>
+
+    </add_ingredients:PopularDrinks>
+    
+    <add_ingredients:UserOrderedDrinkList   
+         x:Name="orderlist" 
+         IconImageSource="Basket.png">
+        <x:Arguments>
+            <local:User/>
+        </x:Arguments>
+
+    </add_ingredients:UserOrderedDrinkList>
+
+
+</TabbedPage>

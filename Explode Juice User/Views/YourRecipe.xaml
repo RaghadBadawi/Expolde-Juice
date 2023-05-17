@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="add_ingredients.Views.YourRecipe">
+    <ContentPage.Content>
+        <StackLayout  Style="{StaticResource MainStackLayout}">
+
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Text="Your Recipes" Style="{StaticResource PageTitle}" HorizontalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+            <ListView x:Name="recipeList" 
+                      ItemsSource="{Binding Recipes}"
+                      Style="{StaticResource ingredientListView}"
+                      ItemTapped="OnRecipeSelected"
+                      ItemSelected="RecipeListItemSelected"
+                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="10" Padding="1" Margin="0,0,0,20">
+                                <StackLayout Style="{StaticResource ListItme}" HeightRequest="100" Padding="10">
+
+                                   
+                                    <StackLayout >
+                                        <Label Text="{Binding Name}"
+                                       FontSize="Large"
+                                           TextColor="#311403"
+                                               VerticalOptions="CenterAndExpand"/>
+                                  
+                                    </StackLayout>
+                                    <ImageButton  x:Name="shareImageButton"
+                                                  Source="Share.png" 
+                                                  Style="{StaticResource allImageButtons}"
+                                                  HorizontalOptions="EndAndExpand"
+                                                  Margin="0,0,10,0"
+                                                  Clicked="ShereImageButtonClicked"
+                                                  />
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

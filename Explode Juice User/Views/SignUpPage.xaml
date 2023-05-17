@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#FFF6F0" Spacing="20">
+            <Label Text="SignUp" Style="{StaticResource PageTitle}" HorizontalOptions="StartAndExpand">
+            </Label>
+            <StackLayout Orientation="Horizontal"  >
+                <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" HorizontalOptions="End" WidthRequest="150" >
+                    <Entry x:Name=" FirstNameentery" Placeholder="First Name" Style="{StaticResource entryName}" Text="{Binding FirstName }" />
+                </Frame>
+                <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20"  HorizontalOptions="Start" WidthRequest="150" >
+                    <Entry x:Name="LastNameentery" Placeholder="Last Name" Style="{StaticResource entryName}" Text="{Binding LastName }" />
+                </Frame>
+            </StackLayout>
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" >
+                <Entry x:Name="Emailentery" Placeholder="Email" Text="{Binding Email}" Keyboard="Email" Style="{StaticResource entryName}" />
+            </Frame>
+
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" WidthRequest="150" >
+                <Entry x:Name=" phone" Placeholder="Phone" Style="{StaticResource entryName}" Keyboard="Telephone" Text="{Binding Phone }" />
+            </Frame>
+
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" >
+                <Entry x:Name="passwordentery" Placeholder="Password (At least 8 characters)" IsPassword="True" Text="{Binding Password}" Style="{StaticResource entryName}"/>
+            </Frame>
+
+            <Frame BackgroundColor="White" BorderColor="#311403" CornerRadius="20" >
+                <Entry x:Name="cfmpasswordentery" Placeholder="Confirm Password"  Text="{Binding ConfirmPassword}" Style="{StaticResource entryName}"  IsPassword="True" />
+            </Frame>
+
+            <Button 
+                    x:Name="signup" Text="SignUp" Command="{Binding SignUpCommand}"
+                    TextColor="#EFB897"
+                    HorizontalOptions="CenterAndExpand"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    CornerRadius="30"
+                    BackgroundColor="#311403"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Style="{StaticResource itemTitle}" Text="Already have an account?" />
+                <Label Style="{StaticResource itemTitle}" Text="Login" FontAttributes="Bold" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLogInTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

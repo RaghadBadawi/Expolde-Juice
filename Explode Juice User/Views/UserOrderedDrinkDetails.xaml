@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="add_ingredients.Views.UserOrderedDrinkDetails">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#FFF6F0" Padding="10">
+
+
+
+            <Image x:Name="reddrink" 
+                   Source="juicePhoto.png"
+                   />
+
+            <Frame BackgroundColor="#EFB897" 
+                   CornerRadius="15"  
+                   Padding="5,5,5,5"
+                   >
+
+                <StackLayout  BackgroundColor="#EFB897" 
+                          Spacing="10"  >
+
+                    <Frame CornerRadius="10" 
+                           Padding="5,0,0,0" 
+                           BackgroundColor="#00ffffff">
+                        <Entry Placeholder="Enter drink name "
+                               PlaceholderColor="#362a23"
+                               x:Name="drinkName"
+                             Text="{Binding Name}"
+
+                               FontSize="25"
+                               TextColor="#311403"
+                               Keyboard="Text"
+                      
+                       />
+                    </Frame>
+
+                    <Label Text="Ingredients"
+                       FontSize="20"
+                       TextColor="#311403"
+                       Padding="5"
+                   />
+                    <StackLayout Orientation="Horizontal"  Padding="10,0,10,0" HorizontalOptions="Center">
+
+                        <Image Source="arrowLeft"
+                               Aspect="AspectFit"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               HorizontalOptions="Start"/>
+
+                        <CollectionView ItemsSource="{Binding SelectedIngredients}" 
+                          HorizontalOptions="CenterAndExpand"             
+                          ItemsLayout="HorizontalList" >
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" Margin="20,0,20,0">
+                                        <Image Source="{Binding ImagePath}" 
+                                               Aspect="AspectFit" 
+                                               HeightRequest="70"
+                                               WidthRequest="70"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <Image Source="arrowRight"
+                               Aspect="AspectFit"
+                               HeightRequest="20"
+                               WidthRequest="20"
+                               HorizontalOptions="End"/>
+
+                    </StackLayout>
+
+
+                    <Label Text="Comment"
+                       FontSize="20"
+                       TextColor="#311403"
+                       Padding="4"
+                           />
+                    <Frame CornerRadius="10" 
+                       Padding="0,0,3,0" 
+                       Margin="10">
+                        <Editor Placeholder="Add Comment"
+                            PlaceholderColor="#362a23"
+                            TextColor="#311403" 
+                            BackgroundColor="#FFFFFF"
+                            HeightRequest="60"
+                              x:Name="commentEditor"
+                             Text="{Binding Comment}"
+                            >
+                        </Editor>
+                    </Frame>
+                    <Button Text="Cancel Your Order"
+                            x:Name="cancleButton"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource actionButton}"
+                        Padding="10" 
+                        CommandParameter="{Binding .}"
+                        Clicked="CancleOrderButtonClicked"
+                    />
+
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
